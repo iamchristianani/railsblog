@@ -26,7 +26,12 @@ RSpec.describe User, type: :model do
   end
 
   describe '#recent_posts' do
-    before { 5.times { |post| Post.create(author_id: subject.id, title: "Post  #{post}", text: "Text #{post}", comments_counter: 2, likes_counter: 6) } }
+    before do
+      5.times do |post|
+        Post.create(author_id: subject.id, title: "Post  #{post}", text: "Text #{post}", comments_counter: 2,
+                    likes_counter: 6)
+      end
+    end
 
     it 'should return recent posts' do
       expect(subject.recent_posts).to eq(subject.posts.order(created_at: :desc).limit(3))

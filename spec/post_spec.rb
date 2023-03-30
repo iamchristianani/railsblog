@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   author = User.create(name: 'Chris', photo: 'photo.png', bio: 'Software Engineer', posts_counter: 3)
-  subject { Post.new(title: 'Post number 1', text: 'This is the first post', author_id: author.id, comments_counter: 2, likes_counter: 6) }
+  subject do
+    Post.new(title: 'Post number 1', text: 'This is the first post', author_id: author.id, comments_counter: 2,
+             likes_counter: 6)
+  end
 
   before { subject.save }
 
@@ -28,7 +30,11 @@ RSpec.describe Post, type: :model do
   end
 
   describe '#recent_comments' do
-    before { 7.times { |comment| Comment.create(author_id: author.id, text: "Comment #{comment}", post_id: subject.id) } }
+    before do
+      7.times do |comment|
+        Comment.create(author_id: author.id, text: "Comment #{comment}", post_id: subject.id)
+      end
+    end
 
     it 'post should have five recent comments' do
       expect(subject.recent_comments).to eq(subject.comments.order(created_at: :desc).limit(5))
