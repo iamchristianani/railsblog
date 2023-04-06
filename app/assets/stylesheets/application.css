@@ -102,8 +102,8 @@ body {
 .button {
   padding: 10px 20px;
   border: none;
-  background-color: #ED2C49;
-  color: #ffffff;
+  background-color: #ed2c49;
+  color: #fff;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -129,13 +129,13 @@ body {
 
 .comments_n_likes {
   align-self: flex-end;
-  padding: 10px 0px;
+  padding: 10px 0;
   font-size: 12px;
 }
 
 .comment-box {
   margin: -18px 0 20px 0;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .each_comment {
