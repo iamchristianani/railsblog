@@ -1,1 +1,42 @@
-<h2>Page Showing a Particular User</h2>
+<ul class="ul-box">
+  <li class="user-details">
+    <div class="image-box">
+      <%= image_tag(@user.photo, class: "user-image") %>
+    </div>
+    <div class="info-box">
+      <h2><%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </li>
+  <li class="li-box">
+    <div class="inner-li-box">
+      <h2>Bio</h2>
+      <p class="p_tags"> <%= @user.bio %> </p>
+    </div>
+  </li>
+  <li>
+    <h2 class="single-header">Posts</h2>
+    <% if @user.recent_posts.blank? %>
+      <div class="li-box">
+        <p class="p_tags inner-li-box">There are no posts available.</p>
+      </div>
+    <% else %>
+      <ul class="posts-box">
+        <% @user.recent_posts.each do |post| %>
+          <li class="li-box">
+            <div class="inner-li-box">
+              <h3>Post #<%= post.id %></h3>
+              <p class="p_tags"><%= post.text %></p>
+              <div class="comments_n_likes">
+                <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <div class="button_div">
+        <a href="<%= url_for(user_posts_path(@user)) %>" class="button">See all posts</a>
+      </div>
+    <% end %>
+  </li>
+</ul>

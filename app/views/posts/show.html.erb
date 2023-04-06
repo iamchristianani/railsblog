@@ -1,1 +1,29 @@
-<h2>Page Showing a Particular Post</h2>
+<ul class="ul-box">
+  <li>
+    <ul class="posts-box">
+      <li class="li-box">
+        <div class="inner-li-box">
+          <div class="title_n_comments">
+            <h4>Post #<%= @post.id %> by <%= @user.name %></h4>
+            <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+          </div>
+          <p class="p_tags post_text"><%= @post.text %></p>
+        </div>
+      </li>
+      <li class="li-box comment-box">
+        <div class="inner-li-box">
+          <% if @post.comments.blank? %>
+            <p class="each_comment post_show_comment">No comments available.</p>
+          <% else %>
+            <% @post.comments.each do |comment| %>
+              <p class="each_comment post_show_comment">
+                <strong><%= comment.author.name %>:</strong>
+                <%= comment.text %>
+              </p>
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
