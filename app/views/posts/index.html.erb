@@ -1,1 +1,43 @@
-<h2>Page Showing Lists of Posts</h2>
+<ul class="ul-box">
+  <li class="user-details">
+    <div class="image-box">
+      <%= image_tag(@user.photo, class: "user-image") %>
+    </div>
+    <div class="info-box">
+      <h2><%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </li>
+
+  <li>
+    <ul class="posts-box">
+      <% @user.posts.each do |post| %>
+        <li class="li-box">
+          <div class="inner-li-box">
+            <a href=<%= "/users/#{@user.id}/posts/#{post.id}" %> >
+              <h3>Post #<%= post.id %> </h3>
+              <p class="p_tags"><%= post.text %></p>
+              <div class="comments_n_likes">
+                <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="li-box comment-box">
+          <div class="inner-li-box">
+            <% if post.recent_comments.blank? %>
+              <p class="each_comment">No comments available.</p>
+            <% else %>
+              <% post.recent_comments.each do |comment| %>
+                <p class="each_comment">
+                  <strong><%= comment.author.name %>:</strong>
+                  <%= comment.text %>
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
