@@ -1,1 +1,23 @@
-<h2>Page Showing Lists of Users</h2>
+<% if @users.blank? %>
+  <div class="li-box">
+    <p class="p_tags inner-li-box">There are no users available.</p>
+  </div>
+<% else %>
+  <ul class="ul-box">
+    <% @users.each do |user| %>
+      <li class="user-details">
+        <div class="image-box">
+          <a href="<%= url_for(user_path(user)) %>" >
+            <%= image_tag(user.photo, class: "user-image") %>
+          </a>
+        </div>
+        <div class="info-box">
+          <a href="<%= url_for(user_path(user)) %>" >
+            <h2><%= user.name %></h2>
+            <p>Number of posts: <%= user.posts_counter %></p>
+          </a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
