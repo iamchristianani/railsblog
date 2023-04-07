@@ -4,10 +4,15 @@
       <li class="li-box">
         <div class="inner-li-box">
           <div class="title_n_comments">
-            <h4>Post #<%= @post.id %> by <%= @user.name %></h4>
+            <h4><%= @post.title %> by <%= @user.name %></h4>
             <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
           </div>
           <p class="p_tags post_text"><%= @post.text %></p>
+          <div>
+            <%= form_with model: @like, url: "/likes/#{@post.id}" do |form|%>
+                <%= form.submit 'Like post', class: 'button like-button' %>
+            <%end%>
+          </div>
         </div>
       </li>
       <li class="li-box comment-box">
@@ -25,5 +30,14 @@
         </div>
       </li>
     </ul>
+  </li>
+  <li class="li-box">
+    <h3 class="form-head">Add a comment</h3>
+    <%= form_with(model: [@post, Comment.new], url: "/comments/#{@post.id}", local: true) do |form| %>
+      <div>
+        <%= form.text_area :text, placeholder: "Enter your comment", class: "form-text-area" %>
+      </div>
+      <%= form.submit "Add Comment", class: "button form-button" %>
+    <% end %>
   </li>
 </ul>
