@@ -9,7 +9,7 @@
           </div>
           <p class="p_tags post_text"><%= @post.text %></p>
           <div>
-            <%= form_with model: @like, url: "/likes/#{@post.id}" do |form|%>
+            <%= form_with model: @like, url: user_post_likes_path(@user, @post) do |form|%>
                 <%= form.submit 'Like post', class: 'button like-button' %>
             <%end%>
           </div>
@@ -32,12 +32,6 @@
     </ul>
   </li>
   <li class="li-box">
-    <h3 class="form-head">Add a comment</h3>
-    <%= form_with(model: [@post, Comment.new], url: "/comments/#{@post.id}", local: true) do |form| %>
-      <div>
-        <%= form.text_area :text, placeholder: "Enter your comment", class: "form-text-area" %>
-      </div>
-      <%= form.submit "Add Comment", class: "button form-button" %>
-    <% end %>
+    <a href="<%= url_for(new_user_post_comment_path(@user, @post)) %>" class="button button-wide">Add Comment</a>
   </li>
 </ul>
