@@ -15,7 +15,7 @@
         <li class="li-box">
           <div class="inner-li-box">
             <a href=<%= "/users/#{@user.id}/posts/#{post.id}" %> >
-              <h3>Post #<%= post.id %> </h3>
+              <h3><%= post.title %></h3>
               <p class="p_tags"><%= post.text %></p>
               <div class="comments_n_likes">
                 <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
