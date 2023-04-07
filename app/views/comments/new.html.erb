@@ -1,0 +1,11 @@
+<ul class="ul-box">
+  <li class="li-box">
+    <h3 class="form-head">Add a comment</h3>
+    <%= form_with(model: @comment, url: user_post_comments_path(@post), local: true) do |form| %>
+      <div>
+        <%= form.text_area :text, placeholder: "Enter your comment", class: "form-text-area" %>
+      </div>
+      <%= form.submit "Add Comment", class: "button form-button" %>
+    <% end %>
+  </li>
+</ul>
