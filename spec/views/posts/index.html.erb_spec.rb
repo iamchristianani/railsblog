@@ -10,7 +10,6 @@ RSpec.describe 'posts/index', type: :feature do
     @first_like = Like.create(post: @first_post, author: @author)
     @second_like = Like.create(post: @second_post, author: @author)
     visit user_posts_path(@author)
-    # click_on @author.name
   end
 
   it 'shows the author image' do
