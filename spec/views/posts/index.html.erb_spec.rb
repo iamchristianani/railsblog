@@ -45,7 +45,12 @@ RSpec.describe 'posts/index', type: :feature do
     expect(page).to have_content('Likes: 1')
   end
 
-  it "when clicking on a post title, it redirects to the post's show page" do
+  it "when clicking on a author's title, it redirects to the post's show page" do
+    click_on @first_post.title
+    expect(page).to have_content(@first_post.title)
+  end
+
+  it "when click on a post, it redirects to the post's show page" do
     click_on @first_post.title
     expect(page).to have_content(@first_post.title)
   end
