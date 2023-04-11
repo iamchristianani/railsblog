@@ -40,4 +40,11 @@
       <% end %>
     </ul>
   </li>
+  <li class="user-details pagination pagination-box">
+    <% @user.posts.each_with_index do |post, post_idx| %>
+      <%= link_to user_post_path(@user, post) do %>
+        <button class="pagination-button"><%= post_idx + 1 %></button>
+      <% end %>
+    <% end %>
+  </li>
 </ul>
