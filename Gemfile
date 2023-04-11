@@ -58,6 +58,8 @@ group :development, :test do
   gem 'rspec-rails'
 
   gem 'database_cleaner'
+
+  gem 'rspec-mocks', '~> 3.12.5'
 end
 
 group :development do
