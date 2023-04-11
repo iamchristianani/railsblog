@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  author = User.create(name: 'Chris', photo: 'photo.png', bio: 'Software Engineer', posts_counter: 3)
+  author = User.create(
+    name: 'Chris',
+    photo: 'https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2022/10/Andor_Luthen-Rael.png',
+    bio: 'Software Engineer',
+    posts_counter: 3
+  )
   subject do
     Post.new(title: 'Post number 1', text: 'This is the first post', author_id: author.id, comments_counter: 2,
              likes_counter: 6)

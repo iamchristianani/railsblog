@@ -1,4 +1,5 @@
 <a name="readme-top"></a>
+
 <div align="center">
   <h3><b>Rails Blog App</b></h3>
 </div>
@@ -10,12 +11,13 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [💻 Getting Started ](#-getting-started-)
+  - [💻 Getting Started with rails-blog ](#-getting-started-with-rails-blog-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Dependencies](#dependencies)
     - [Usage](#usage)
+    - [Run tests](#run-tests)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -28,6 +30,7 @@
 # 📖 Rails Blog App <a name="about-project"></a>
 
 > This project involves building a blog application using Ruby on Rails with the ability to create & view blog posts, commenting, like functionality. The app use PostgreSQL as its database management system. The goal is to create a user-friendly and responsive web application that allows users to easily create and share their blog posts.
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -44,7 +47,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Registered users will be able to create new blog posts. 
+- Registered users will be able to create new blog posts.
 
 - Users will be able to view blog posts on the application's home page.
 
@@ -55,9 +58,13 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started with rails-blog <a name="getting-started"></a>
+
 > To get a local copy up and running, follow these steps.
+
 ### Prerequisites
+
 In order to run this project you need:
+
 1. Ruby installed on your machine
 2. Text editor (VSCode, Sublime, Atom, etc.)
 3. Install Rails gem
@@ -68,38 +75,50 @@ Clone this [repository](https://github.com/iamchristianani/railsblog.git) to you
 
 ```sh
   cd folder-name
-  git clone https://github.com/iamchristianani/railsblog.git 
+  git clone https://github.com/iamchristianani/railsblog.git
 ```
 
 ### Install
+
 Install this project with:
+
 ```sh
   cd railsblog
 ```
 
 ### Dependencies
+
 Install Dependencies with:
+
 ```sh
   bundle install
 ```
+
 create database in your postgre with:
+
 ```sh
   rails db:create
 ```
+
 > Note: If you have any problem with the database, you can check the database.yml file and change the username and password to your own.
-Run migration with:
+> Run migration with:
+
 ```sh
   rails db:migrate
 ```
 
 ### Usage
+
 Run Project with:
+
 ```sh
   rails server
 ```
 
 ### Run tests
+
 Run tests with:
+
 ```sh
   rspec
 ```
@@ -113,6 +132,12 @@ Run tests with:
 - GitHub: [@iamchristianani](https://github.com/iamchristianani)
 - Twitter: [@kriznode](https://twitter.com/kriznode)
 - LinkedIn: [Christian Ani](https://www.linkedin.com/in/anikriz/)
+
+👤 **Mohamed Hassan Noor**
+
+- GitHub: [@MohamedHNoor](https://github.com/MohamedHNoor)
+- Twitter: [@MohamedHNoor](https://twitter.com/MohamedHNoor)
+- LinkedIn: [@MohamedHNoor](https://www.linkedin.com/in/mohamedhnoor/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,4 +181,5 @@ We would like to thank Microverse for providing the reading materials that aided
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

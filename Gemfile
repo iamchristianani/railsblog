@@ -56,6 +56,8 @@ group :development, :test do
 
   # Add RSpec tests for Unit tests [https://guides.rubyonrails.org/testing.html]
   gem 'rspec-rails'
+
+  gem 'database_cleaner'
 end
 
 group :development do
