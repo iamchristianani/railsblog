@@ -180,3 +180,17 @@ body {
 .like-button {
   padding: 5px 10px;
 }
+
+.pagination-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80%;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.pagination-button {
+  padding: 3px 8px;
+}
