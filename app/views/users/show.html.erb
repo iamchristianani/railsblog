@@ -1,7 +1,7 @@
 <ul class="ul-box">
   <li class="user-details">
     <div class="image-box">
-      <%= image_tag(@user.photo, class: "user-image") %>
+      <%= image_tag(@user.photo || "", class: "user-image") %>
     </div>
     <div class="info-box">
       <h2><%= @user.name %></h2>
