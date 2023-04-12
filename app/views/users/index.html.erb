@@ -8,7 +8,7 @@
       <li class="user-details">
         <div class="image-box">
           <a href="<%= url_for(user_path(user)) %>" >
-            <%= image_tag(user.photo, class: "user-image") %>
+            <%= image_tag(user.photo || "", class: "user-image") %>
           </a>
         </div>
         <div class="info-box">

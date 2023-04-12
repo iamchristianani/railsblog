@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -99,14 +98,17 @@ body {
   padding: 20px;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
 .button {
   padding: 10px 20px;
-  border: none;
   background-color: #ed2c49;
   color: #fff;
   border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
 }
 
 .button-wide {
@@ -193,4 +195,63 @@ body {
 
 .pagination-button {
   padding: 3px 8px;
+}
+
+.navbar {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  row-gap: 0;
+  background-color: beige;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropbtn {
+  font-size: 15px;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f9f9f9;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ddd;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a,
+button {
+  float: none;
+  color: black;
+  padding: 12px 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-content a:hover,
+button:hover {
+  background-color: #ed2c49;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
