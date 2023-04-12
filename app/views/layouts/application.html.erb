@@ -5,12 +5,42 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/ad432cd04f.js" crossorigin="anonymous"></script>
   </head>
-
   <body>
+    <nav>
+      <ul class="ul-box navbar">
+        <li>
+          <% if current_user %>
+            <a class="nav-home" href="/users">Home</a>
+          <% end %>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  Account <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <% if current_user %>
+                    <%= link_to "Edit Account", edit_user_registration_path %>
+                    <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+                  <% else %>
+                    <%= link_to "Sign Up", new_user_registration_path %>
+                    <%= link_to "Sign In", new_user_session_path %>
+                  <% end %>
+                <div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
