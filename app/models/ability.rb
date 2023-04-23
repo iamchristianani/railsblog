@@ -9,6 +9,7 @@ class Ability
     # Define User abilities
     if user.is? :admin
       can :destroy, Post
+      can :destroy, Comment
     end
 
     # Define abilities for the user here. For example:
