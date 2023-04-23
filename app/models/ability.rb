@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -7,10 +5,11 @@ class Ability
     user ||= User.new
 
     # Define User abilities
-    if user.is? :admin
-      can :destroy, Post
-      can :destroy, Comment
-    end
+    return unless user.is? :admin
+
+    can :destroy, Post
+    can :destroy, Comment
+
 
     # Define abilities for the user here. For example:
     #
