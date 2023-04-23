@@ -13,7 +13,7 @@
                 <%= form.submit 'Like post', class: 'button like-button' %>
             <% end %>
           </div>
-          <% if (can? :destroy, Post) || current_user.id == @user.id %>
+          <% if (can? :destroy, Post) || current_user.id == @post.author_id %>
             <div>
               <%= button_to "Delete Post", user_post_path(@user, @post), method: :delete %>
             </div>
@@ -30,6 +30,11 @@
                 <strong><%= comment.author.name %>:</strong>
                 <%= comment.text %>
               </p>
+              <% if (can? :destroy, Comment) || current_user.id == comment.author_id %>
+                <div>
+                  <%= button_to "Delete Comment", user_post_comment_path(@user, @post, comment), method: :delete %>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
         </div>
