@@ -9,6 +9,9 @@ gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 ## Use Devise for user authentication
 gem 'devise'
 
+## For Authorizations
+gem 'cancancan'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
