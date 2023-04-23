@@ -11,8 +11,13 @@
           <div>
             <%= form_with model: @like, url: user_post_likes_path(@user, @post) do |form|%>
                 <%= form.submit 'Like post', class: 'button like-button' %>
-            <%end%>
+            <% end %>
           </div>
+          <% if (can? :destroy, Post) || current_user.id == @user.id %>
+            <div>
+              <%= button_to "Delete Post", user_post_path(@user, @post), method: :delete %>
+            </div>
+          <% end %>
         </div>
       </li>
       <li class="li-box comment-box">
